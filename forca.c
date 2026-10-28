@@ -18,6 +18,18 @@ int verifica_letra(char palavra[], char letra);
 int verifica_vitoria(char palavra[], char letrasUsadas[]);
 void mostra_forca(int erros);
 
+// quando termina de rodar o codigo precisa liberar cada 
+// "palavras[i]", tbm as "dicas[i]" e os arrays. Questão de otimização de memoria
+
+// O array tem capacidade para 26 letras soq a entrada aceita qualquer 
+// caractere, tem q restrinjir a entrada a letras válidas e considerar 
+// tbm letras acentuadas, no meu codigo lá eu usei isso mas só por charme kkkkkk
+
+// Tem entradas muito longas na memoria, o fgets() limita a leitura ao tamanho do
+// buffer, mas o programa não detecta quando uma linha foi truncada. Também é importante 
+// validar o tamanho e o conteúdo das palavras e dicas antes de copiá-las.
+
+
 int main() {
     int opcao;
 
