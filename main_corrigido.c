@@ -2,6 +2,7 @@
 #include <stdlib.h>
 #include <ctype.h>
 #include <time.h>
+#include <string.h>
 
 char velha[3][3];
 int nivelComputador;
@@ -46,6 +47,7 @@ int le_inteiro() {
 
     resultado = scanf("%d", &valor);
 
+    // Se a leitura falhar, limpar o buffer de entrada e retornar -1
     if (resultado != 1) {
         do {
             caractere = getchar();
@@ -222,13 +224,12 @@ void jogada_computador(char jog, int nivel) {
     printf("O computador escolheu a posicao %d.\n", posicao);
 }
 
+// Nivel basico: o computador escolhe uma casa vazia aleatoria.
 // Nivel intermediario: o computador tenta vencer, bloquear uma vitoria adversaria, 
 // ocupar o centro e escolher um canto.
-// Nivel basico: o computador escolhe aleatoriamente uma casa vazia.
 // Nivel avancado: a implementacao apresentada ainda e uma estraegia heuristica simples, 
 // semelhante a intermediaria; nao garante a melhor jogada em todas as situacoes.
 
-// Escolhe uma casa vazia aleatoria.
 int jogada_basica() {
     int casas[9];
     int quantidade = 0;
@@ -366,7 +367,6 @@ void joga_partida(int opcao, char jog1, char jog2) {
 
     while (1) {
         mostra_velha();
-
         if (opcao == 1 && turno == jog2) {
             printf("Vez do computador (%c).\n", turno);
             jogada_computador(turno, nivelComputador);
