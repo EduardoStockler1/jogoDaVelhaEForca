@@ -473,7 +473,7 @@ void joga_campeonato() {
     do {
         printf("\nDigite o nome do Jogador 1: ");
         fgets(nomeJogador1, sizeof(nomeJogador1), stdin);
-        nomeJogador1[strcspn(nomeJogador1, "\r\n")] = '\0';
+        nomeJogador1[strcspn(nomeJogador1, "\n")] = '\0';
         if (nomeJogador1[0] == '\0') {
             printf("Nome invalido. Digite novamente.\n");
         }
@@ -482,7 +482,7 @@ void joga_campeonato() {
     do {
         printf("Digite o nome do Jogador 2: ");
         fgets(nomeJogador2, sizeof(nomeJogador2), stdin);
-        nomeJogador2[strcspn(nomeJogador2, "\r\n")] = '\0';
+        nomeJogador2[strcspn(nomeJogador2, "\n")] = '\0';
         if (nomeJogador2[0] == '\0') {
             printf("Nome invalido. Digite novamente.\n");
         }
